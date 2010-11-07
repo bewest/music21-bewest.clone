@@ -464,6 +464,7 @@ class Environment(object):
             cmd = 'open -a"%s" %s %s' % (fpApp, options, fp)
         elif platform == 'nix':
             cmd = '%s %s %s' % (fpApp, options, fp)
+        print cmd
         os.system(cmd)
 
 

@@ -246,6 +246,7 @@ scoreTitleMarkup=##f
             else:
                 command = ''
             os.system(command)
+            environLocal.launch(format, returnedFilePath, app=app)
         
     def showPNG(self):
         '''Take the LilyString, run it through LilyPond, and then show it as a PNG file.

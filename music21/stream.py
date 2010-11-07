@@ -4878,7 +4878,7 @@ class Stream(music21.Music21Object):
         #    return self._cache["lily"]
         # TODO: RESTORE CACHE WHEN Changes bubble up 
         
-        lilyout = u" { "
+        lilyout = u"\n  { "
 #        if self.showTimeSignature is not False and self.timeSignature is not None:
 #            lilyout += self.timeSignature.lily
     
@@ -6439,7 +6439,7 @@ class Part(Stream):
 
     def _getLily(self):
         lv = Stream._getLily(self)
-        lv2 = lilyModule.LilyString(" \\new Staff " + lv.value)
+        lv2 = lilyModule.LilyString("\t\n \\new Staff " + lv.value)
         return lv2
     
     lily = property(_getLily)
@@ -6520,7 +6520,7 @@ class Score(Stream):
                     else:
                         # TODO: write out debug code here
                         pass
-                ret += " >> "
+                ret += " >>\n"
             else:
                 if hasattr(thisOffsetPosition[0], "lily"):
                     ret += thisOffsetPosition[0].lily

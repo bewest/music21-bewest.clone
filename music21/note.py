@@ -404,7 +404,7 @@ class GeneralNote(music21.Music21Object):
             allNames += self.duration.lily
             allNames += self.editorial.lilyAttached()
             if self.lyric is not None: # hack that uses markup...
-                allNames += "_\markup { \"" + self.lyric + "\" } "
+                allNames += "_\markup { \"" + self.lyric + "\" }\n "
             
         if (self.tie is not None):
             if (self.tie.type != "stop"):

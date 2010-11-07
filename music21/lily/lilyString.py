@@ -280,14 +280,14 @@ scoreTitleMarkup=##f
                     file = lilyImage2.convert(base)._dump(format=format)
                 else:
                     file = lilyImage2._dump(format=format)
-                environLocal.launch(format, file)
+                environLocal.launch(format.lower(), file)
                 #self.showImageDirect(file)
             except:
                 raise
                 # this will never execute after an extension
                 #self.showImageDirect(lilyFile)
         else:
-            environLocal.launch(self.format, lilyFile)
+            environLocal.launch(self.format.lower(), lilyFile)
             #self.showImageDirect(lilyFile)
         
         return lilyFile
@@ -409,9 +409,4 @@ class TestExternal(unittest.TestCase):
 if __name__ == "__main__":
     music21.mainTest(Test)
     #music21.mainTest(Test, TestExternal)
-
-
-
-
-
 

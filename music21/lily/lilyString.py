@@ -174,6 +174,13 @@ scoreTitleMarkup=##f
     
     wrappedValue = property(_getWrappedValue)
     
+    def render_template(self):
+      data = []
+      data.append(self.snippet)
+      data.append(self.headerInformation)
+      data.append(self.wrappedValue.encode('utf-8'))
+      return '\n'.join(data)
+      
     def writeTemp(self, ext=''):
         fp = environLocal.getTempFile(ext)
 

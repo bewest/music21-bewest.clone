@@ -2206,11 +2206,7 @@ class Music21Object(JSONSerializer):
         if fp is None:
             fp = environLocal.getTempFile(ext)
 
-<<<<<<< HEAD
         if format in ['text', 'textline', 'musicxml', 'lilypond']:        
-=======
-        if format in ['text', 'textline', 'musicxml', 'lilypond']:
->>>>>>> c27e8e75ec7438b04dfb2c50d20350d82c88b353
             if format == 'text':
                 dataStr = self._reprText()
             elif format == 'textline':
@@ -2218,12 +2214,8 @@ class Music21Object(JSONSerializer):
             elif format == 'musicxml':
                 dataStr = self.musicxml
             elif format == 'lilypond':
-<<<<<<< HEAD
                 dataStr = self.lily.renderTemplate()
 
-=======
-                dataStr = self.lily.render_template()
->>>>>>> c27e8e75ec7438b04dfb2c50d20350d82c88b353
             f = open(fp, 'w')
             f.write(dataStr)
             f.close()
@@ -2292,12 +2284,7 @@ class Music21Object(JSONSerializer):
 
         elif fmt == 'lily.pdf':
             #return self.lily.showPDF()
-<<<<<<< HEAD
             environLocal.launch('pdf', self.lily.createPDF(), app=app)
-=======
-            returnedFilePath = self.lily.createPDF()
-            environLocal.launch('pdf', returnedFilePath, app=app)
->>>>>>> c27e8e75ec7438b04dfb2c50d20350d82c88b353
         elif fmt == 'lily.png':
             # TODO check that these use environLocal 
             return self.lily.showPNG()

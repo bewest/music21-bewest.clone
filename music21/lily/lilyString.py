@@ -264,17 +264,10 @@ scoreTitleMarkup=##f
                 if os.name == 'nt':
                     format = 'png'
                 # why are we changing format for darwin?
-<<<<<<< HEAD
                 elif sys.platform == 'darwin':
                     format = 'jpeg'
                 else: # default for all other platforms
                     format = 'png'
-=======
-                elif sys.platform == "darwin":
-                    format = "JPEG"
-                else:
-                    format = "PNG"
->>>>>>> needed to get show lily.png to work for me on 'nix
                 
                 if lilyImage2.mode == "I;16":
                 # @PIL88 @PIL101

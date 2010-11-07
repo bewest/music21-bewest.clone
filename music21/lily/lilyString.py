@@ -179,7 +179,7 @@ scoreTitleMarkup=##f
       data.append(self.snippet)
       data.append(self.headerInformation)
       data.append(self.wrappedValue.encode('utf-8'))
-      return '\n'.join(data)
+      return "\n".join(data)
       
     def writeTemp(self, ext=''):
         fp = environLocal.getTempFile(ext)
@@ -251,6 +251,7 @@ scoreTitleMarkup=##f
             else:
                 command = ""
             os.system(command)
+            environLocal.launch(format, returnedFilePath, app=app)
         
     def showPNG(self):
         '''Take the LilyString, run it through LilyPond, and then show it as a PNG file.

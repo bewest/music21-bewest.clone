@@ -173,7 +173,6 @@ scoreTitleMarkup=##f
             return unicode('{' + self.value + '}')
     
     wrappedValue = property(_getWrappedValue)
-    
 
     def renderTemplate(self):
         '''Return configured string data. 

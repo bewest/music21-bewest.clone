@@ -667,3 +667,5 @@ _DOC_ORDER = [UserSettings, Environment, Preference]
 if __name__ == "__main__":
     music21.mainTest(Test)
 
+#####
+# EOF

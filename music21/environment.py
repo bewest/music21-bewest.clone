@@ -31,8 +31,25 @@ from music21 import common
 from music21 import node
 
 
+# I think you want __name__?
 _MOD = 'environment.py'
 
+import logging
+
+# This sets up logging to go to stderr
+logging.basicConfig( )
+log = logging.getLogger('music21')
+log.setLevel(logging.INFO)
+# any module can get their logger this way:
+# import logging
+# log = logging.getLogger(__name__)
+# log.info('foo') # stderr
+# log.warn('foo') # stderr
+# log.debug('foo') # /dev/null
+# You can configure logging to suppress messages or send them to different
+# places.  A simple modification might be log.setLevel(logging.DEBUG) when
+# a user has set a preference.
+#
 
 #-------------------------------------------------------------------------------
 class EnvironmentException(Exception):
@@ -120,6 +137,8 @@ class Environment(object):
         self.read() # load a stored file if available
         # store the name of the module that is using this object
         # this is used for printing debug information
+        if self.ref['debug']:
+          log.setLevel(int(self.ref['debug'])*10)
         self.modNameParent = modName
 
 
@@ -249,6 +268,8 @@ class Environment(object):
             value = value.lower()
             if value in common.VALID_WRITE_FORMATS:
                 valid = True
+        elif key == 'debug':
+          log.setLevel(logging.INFO)
         elif key == 'autoDownload':
             value = value.lower()
             if value in common.VALID_AUTO_DOWNLOAD:
@@ -464,7 +485,6 @@ class Environment(object):
             cmd = 'open -a"%s" %s %s' % (fpApp, options, fp)
         elif platform == 'nix':
             cmd = '%s %s %s' % (fpApp, options, fp)
-        print cmd
         os.system(cmd)
 
 

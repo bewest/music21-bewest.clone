@@ -1109,3 +1109,4 @@ if __name__ == "__main__":
         #t.testKrumhansl()
 
         t.testIntervalDiversity()
+

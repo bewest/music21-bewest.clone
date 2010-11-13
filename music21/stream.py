@@ -12041,7 +12041,6 @@ if __name__ == "__main__":
 
         #t.testMeasureOffsetMap()
 
-<<<<<<< HEAD
         #t.testImplodeA()
         #t.testImplodeB()
         #t.testExplodeA()
@@ -12058,8 +12057,6 @@ if __name__ == "__main__":
 
         t.testInternalize()
         t.testMakeRests()
-=======
         t.testImplodeA()
         t.testImplodeB()
 
->>>>>>> tweak whitespace in lilypond output

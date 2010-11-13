@@ -485,6 +485,7 @@ class Environment(object):
             cmd = 'open -a"%s" %s %s' % (fpApp, options, fp)
         elif platform == 'nix':
             cmd = '%s %s %s' % (fpApp, options, fp)
+        print cmd
         os.system(cmd)
 
 
@@ -666,6 +667,3 @@ _DOC_ORDER = [UserSettings, Environment, Preference]
 if __name__ == "__main__":
     music21.mainTest(Test)
 
-
-#####
-# EOF

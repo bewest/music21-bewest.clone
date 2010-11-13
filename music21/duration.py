@@ -1558,8 +1558,13 @@ class DurationUnit(DurationCommon):
         number_type = convertTypeToNumber(self.type)
         dots = "." * int(self.dots)
         if number_type < 1:
+<<<<<<< HEAD
            number_type = int(number_type * 16)
         return str(number_type) + dots
+=======
+          number_type = int(number_type * 16)
+        return (str(number_type) + dots)
+>>>>>>> c27e8e75ec7438b04dfb2c50d20350d82c88b353
 
     lily = property(_getLily)
 

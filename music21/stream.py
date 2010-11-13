@@ -12060,3 +12060,5 @@ if __name__ == "__main__":
         t.testImplodeA()
         t.testImplodeB()
 
+        #t.testMeasureOffsetMap()
+        t.testImplode()
